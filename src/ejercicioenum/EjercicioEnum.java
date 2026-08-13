@@ -71,9 +71,9 @@ public class EjercicioEnum {
                         }
                     } catch (NumberFormatException e) {
                         System.out.println("Error: Algunos datos numericos no son validos");
-                    } catch (CapacidadException e) {
+                 
                         System.out.println("Error: No se puede crear el pedido. Capacidad maxima alcanzada");
-                    } catch (Exception e) {
+                    }catch (Exception e) {
                         System.out.println("Error: No se pudo crear el pedido");
                     }
                     break;
