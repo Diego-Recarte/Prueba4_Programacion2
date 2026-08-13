@@ -28,6 +28,8 @@ public class PedidoNacional extends pedido {
          
         costoEnvio =TarifaBase + (km * TarifaKm);
         
+        System.out.println("El monto por envio es de $"+ costoEnvio);
+        
         return costoEnvio;
     
         
