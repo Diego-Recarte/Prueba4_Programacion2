@@ -48,7 +48,7 @@ public abstract class pedido {
     
     
     public String toString(){
-        return "Pedido"+id+"/ "+ getTipo()+", "+cliente+", monto $"+ monto+ ", envio: $"+CalcularCostoEnvio()+", estado "+estado+"-"+estado.getDescripcion();
+        return "Pedido"+id+"/ "+ getTipo()+", "+cliente+", monto $"+ monto+ ", estado "+estado+"-"+estado.getDescripcion();
     }
         
     
