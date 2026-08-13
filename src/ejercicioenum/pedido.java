@@ -40,6 +40,7 @@ public abstract class pedido {
 
     public void setEstado(EstadoPedido estado) {
         this.estado = estado;
+        System.out.println("El estado del pedido fue cambiado a "+ estado);
     }
     
     public abstract double calcularCostoEnvio();

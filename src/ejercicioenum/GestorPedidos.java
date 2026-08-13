@@ -29,19 +29,29 @@ public class GestorPedidos {
     }
     
     public pedido buscarPorId(int id) throws PedidoNoEncontrado {
-    for (int i = 0; i < cantidad; i++) {
-        if (pedidos[i].getId() == id) {
-            return pedidos[i];
+        for (int i = 0; i < cantidad; i++) {
+            if (pedidos[i].getId() == id) {
+                return pedidos[i];
+            }
         }
+        throw new PedidoNoEncontrado(id);
     }
-    throw new PedidoNoEncontrado(id);
-    }
-    
-        
-    
-    
-    
-    
+
 
     
+    public void cambiarEstado(int id, EstadoPedido nuevoEstado)throws PedidoNoEncontrado, TransicionEstadoException {
+
+        pedido pedido = buscarPorId(id);
+
+        EstadoPedido estadoActual = pedido.getEstado();
+
+        if (!estadoActual.transicionarA(nuevoEstado)) {
+            throw new TransicionEstadoException(estadoActual, nuevoEstado);
+        }
+        else{
+            pedido.setEstado(nuevoEstado);
+        }
+    }
 }
+    
+    
