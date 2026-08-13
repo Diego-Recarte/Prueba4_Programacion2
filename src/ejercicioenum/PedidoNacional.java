@@ -8,6 +8,35 @@ package ejercicioenum;
  *
  * @author user
  */
-public class PedidoNacional {
+public class PedidoNacional extends pedido {
+    
+    
+    private double km;
+    private double TarifaBase = 30;
+    private double TarifaKm= 5;
+   
+    public PedidoNacional (int id, String cliente, double monto, double km ){
+        super(id, cliente, monto);
+        this.km = km;
+        System.out.println(calcularCostoEnvio());
+    }
+    
+    @Override
+    public double calcularCostoEnvio(){
+        
+        double costoEnvio;
+         
+        costoEnvio =TarifaBase + (km * TarifaKm);
+        
+        return costoEnvio;
+    
+        
+    }
+    
+    @Override
+    public String getTipo(){
+        
+        return ("Este es un pedido a nivel NACIONAl");
+    }
     
 }
