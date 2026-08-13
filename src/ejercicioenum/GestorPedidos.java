@@ -28,4 +28,20 @@ public class GestorPedidos {
                 
     }
     
+    public pedido buscarPorId(int id) throws PedidoNoEncontrado {
+    for (int i = 0; i < cantidad; i++) {
+        if (pedidos[i].getId() == id) {
+            return pedidos[i];
+        }
+    }
+    throw new PedidoNoEncontrado(id);
+    }
+    
+        
+    
+    
+    
+    
+
+    
 }
